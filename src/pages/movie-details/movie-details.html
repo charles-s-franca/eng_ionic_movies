@@ -14,17 +14,5 @@
 
 
 <ion-content padding>
-    <ion-card *ngIf="movie" class="movie-card" >
-        <div class="img-container">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
-        </div>
-        <ion-card-content>
-          <ion-card-title>
-            {{ movie.title }}
-          </ion-card-title>
-          <p>
-            {{ movie.overview }}
-          </p>
-        </ion-card-content>
-      </ion-card>
+    <movie-card *ngIf="movie" [movie]="movie"></movie-card>
 </ion-content>

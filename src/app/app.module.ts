@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MoviesProvider } from '../providers/movies/movies';
 import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MovieDetailsPage } from '../pages/movie-details/movie-details';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

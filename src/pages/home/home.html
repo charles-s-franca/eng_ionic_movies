@@ -6,17 +6,12 @@
 
 <!-- <ion-content padding> -->
 <ion-content>
-  <ion-card class="movie-card" *ngFor="let movie of movies" (click)="goToDetails(movie.id)">
-    <div class="img-container">
-        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
-    </div>
-    <ion-card-content>
-      <ion-card-title>
-        {{ movie.title }}
-      </ion-card-title>
-      <p>
-        {{ movie.overview }}
-      </p>
-    </ion-card-content>
-  </ion-card>
+  <button ion-button block (click)="takePicture()">
+    Take Picture
+  </button>
+
+  <img *ngIf="image" [src]="image" alt="">
+
+  <movie-card *ngFor="let movie of movies" [movie]="movie" (onMovieClicked)="goToDetails($event)"></movie-card>
+
 </ion-content>
