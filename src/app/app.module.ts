@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MoviesProvider } from '../providers/movies/movies';
 import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
+import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MovieDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MovieDetailsPage
   ],
   providers: [
     StatusBar,

@@ -6,7 +6,7 @@
 
 <!-- <ion-content padding> -->
 <ion-content>
-  <ion-card class="movie-card" *ngFor="let movie of movies">
+  <ion-card class="movie-card" *ngFor="let movie of movies" (click)="goToDetails(movie.id)">
     <div class="img-container">
         <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" />
     </div>

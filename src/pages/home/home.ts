@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MoviesProvider } from '../../providers/movies/movies';
+import { MovieDetailsPage } from '../movie-details/movie-details';
 
 @Component({
   selector: 'page-home',
@@ -17,6 +18,12 @@ export class HomePage {
       .then(movies => {
         this.movies = movies;
       });
+  }
+
+  goToDetails(id){
+    this.navCtrl.push(MovieDetailsPage, {
+      id: id
+    });
   }
 
 }
