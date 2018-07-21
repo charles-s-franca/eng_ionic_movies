@@ -27,4 +27,16 @@ export class MoviesProvider {
     })
   }
 
+  geMovieDetails(id) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f6b9adefc9f1e328fc5a66a32f4a3354`)
+        .subscribe(response => {
+          var data = response as any;
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    })
+  }
+
 }
