@@ -1,0 +1,29 @@
+<!--
+  Generated template for the AddCommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comentários</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Comentário</ion-label>
+      <ion-input type="text" #commentInput></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button block (click)="addComment(commentInput.value)">Sign In</button>
+  </div>
+</ion-content>

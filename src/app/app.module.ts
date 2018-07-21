@@ -14,6 +14,8 @@ import { MoviesProvider } from '../providers/movies/movies';
 import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { ComponentsModule } from '../components/components.module';
+import { AddCommentPage } from '../pages/add-comment/add-comment';
+import { CommentsProvider } from '../providers/comments/comments';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ComponentsModule } from '../components/components.module';
     ContactPage,
     HomePage,
     TabsPage,
-    MovieDetailsPage
+    MovieDetailsPage,
+    AddCommentPage
   ],
   imports: [
     BrowserModule,
@@ -37,13 +40,15 @@ import { ComponentsModule } from '../components/components.module';
     ContactPage,
     HomePage,
     TabsPage,
-    MovieDetailsPage
+    MovieDetailsPage,
+    AddCommentPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MoviesProvider
+    MoviesProvider,
+    CommentsProvider
   ]
 })
 export class AppModule {}

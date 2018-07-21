@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { MoviesProvider } from '../../providers/movies/movies';
+import { AddCommentPage } from '../add-comment/add-comment';
+import { CommentsProvider } from '../../providers/comments/comments';
 
 /**
  * Generated class for the MovieDetailsPage page.
@@ -19,7 +21,9 @@ export class MovieDetailsPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private moviesProvider: MoviesProvider
+    private moviesProvider: MoviesProvider,
+    public modalCtrl: ModalController,
+    private commentsProvider: CommentsProvider
   ) {
       this.movie_id = this.navParams.get("id");
       this.moviesProvider.geMovieDetails(this.movie_id).then(movie => {
@@ -29,6 +33,19 @@ export class MovieDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MovieDetailsPage');
+  }
+
+  addComment() {
+    let commentModal = this.modalCtrl.create(AddCommentPage, { id: this.movie_id });
+     commentModal.present();
+  }
+
+  backToList() {
+    this.navCtrl.pop();
+  }
+
+  getComments() {
+    return this.commentsProvider.getComments();
   }
 
 }
